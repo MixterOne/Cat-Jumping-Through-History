@@ -8,7 +8,7 @@ image_index = irandom(image_number - 1);
 
 // Movimentando horizontal
 
-velh = 6;
+velh = 8;
 
 
 

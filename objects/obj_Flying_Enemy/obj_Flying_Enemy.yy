@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_Obstacle_small",
+  "name": "obj_Flying_Enemy",
   "spriteId": {
-    "name": "spr_Obstacle_Small",
-    "path": "sprites/spr_Obstacle_Small/spr_Obstacle_Small.yy",
+    "name": "spr_Flying_Enemy",
+    "path": "sprites/spr_Flying_Enemy/spr_Flying_Enemy.yy",
   },
   "solid": false,
   "visible": true,
@@ -27,7 +27,9 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
