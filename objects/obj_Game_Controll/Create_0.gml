@@ -9,7 +9,7 @@ total_distance = 0;
 
 // Nível e fase
 current_level = 1;
-current_stage = 1;
+//current_stage = 1;
 max_level = 5; // sempre termina com o boss no nível 5
 distance_per_level = 1000; // distancia por nivel
 

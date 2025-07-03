@@ -1,20 +1,17 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_Flying_Enemy",
+  "name": "obj_Bullet_Laser",
   "spriteId": {
-    "name": "spr_Flying_Enemy",
-    "path": "sprites/spr_Flying_Enemy/spr_Flying_Enemy.yy",
+    "name": "spr_Laser",
+    "path": "sprites/spr_Laser/spr_Laser.yy",
   },
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_Enemy_Base",
-    "path": "objects/obj_Enemy_Base/obj_Enemy_Base.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -30,6 +27,7 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_Enemy_Base","path":"objects/obj_Enemy_Base/obj_Enemy_Base.yy",},},
   ],
   "properties": [],
   "overriddenProperties": [],

@@ -47,8 +47,8 @@ function chance_to_new_level()
 
 function spawnar_boss() {
     // Cria o boss mais à frente do jogador
-    var boss_x = obj_Player.x + 400;
-    var boss_y = obj_Player.y - 32;
+    var boss_x = room_width - 200;
+    var boss_y = room_height - 200;
 
     instance_create_layer(boss_x, boss_y, "Enemys", obj_Boss_L1);
 

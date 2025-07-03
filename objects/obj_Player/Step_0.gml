@@ -70,3 +70,81 @@ else
 //Alterando eixo Y
 y = y + force_jump;
 
+
+// Sistema de armas - Seleção
+
+// Trocar de arma com as teclas 1, 2, 3
+if (keyboard_check_pressed(ord("1"))) arma_selecionada = 0;
+if (keyboard_check_pressed(ord("2"))) arma_selecionada = 1;
+if (keyboard_check_pressed(ord("3"))) 
+{
+	arma_selecionada = 2;
+}
+
+
+if (instance_exists(obj_arma_instanciada)) {
+    with (obj_arma_instanciada) instance_destroy();
+}
+
+switch (arma_selecionada) {
+    case 0:
+        //obj_arma_instanciada = instance_create_layer(x, y, "Instances", obj_arma_pistola);
+        break;
+    case 1:
+        //obj_arma_instanciada = instance_create_layer(x, y, "Instances", obj_arma_shotgun);
+        break;
+    case 2:
+        obj_arma_instanciada = instance_create_layer(x, y - 32, "Instances", obj_Pistol);
+        break;
+}
+
+// Controle de cooldown de tiro
+if (!pode_atirar) {
+    tempo_tiro += 1;
+    if (tempo_tiro >= cooldown_tiro) {
+        pode_atirar = true;
+        tempo_tiro = 0;
+    }
+}
+
+// Atirar (botão esquerdo do mause)
+if (mouse_check_button_pressed(mb_left) && pode_atirar) {
+    pode_atirar = false;
+
+    switch (arma_selecionada) {
+        case 0: 
+            //instance_create_layer(x + 16, y, "Tiros", obj_bullet_pistola);
+            break;
+
+        case 1: // Shotgun (3 projéteis)
+            //for (var i = -1; i <= 1; i++) {
+            //    var t = instance_create_layer(x + 16, y, "Tiros", obj_bullet_shotgun);
+            //    t.direction = i * 15; // ângulo de dispersão
+            //}
+            break;
+
+        case 2: // Pistola
+			
+            var alvo = noone;
+		    var menor_dist = 10000; // número alto o suficiente
+
+		    // Procurar inimigo mais próximo
+		    with (obj_Enemy_Base) {
+		        var dist = point_distance(other.x, other.y, x, y);
+		        if (dist < menor_dist) {
+		            menor_dist = dist;
+		            alvo = id;
+		        }
+		    }
+
+		    var laser = instance_create_layer(x + 16, y, "Bullet", obj_Bullet_Laser);
+
+		    if (instance_exists(alvo)) {
+		        laser.direction = point_direction(laser.x, laser.y, alvo.x, alvo.y);
+		    } else {
+		        laser.direction = 0; // segue reto se não tiver alvo
+		    }
+		            break;
+		    }
+}
+
